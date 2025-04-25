@@ -5,4 +5,5 @@ response = requests.get("https://api.github.com/repos/kubernetes/kubernetes/pull
 
 total_pulls = response.json()
 
-print(total_pulls[0]["requested_reviewers"][2]["login"])
+for i in range(len(total_pulls)):
+  print(total_pulls[i]["requested_reviewers"][0]["login"])
